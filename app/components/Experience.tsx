@@ -6,7 +6,7 @@ import { FaLinkedinIn } from 'react-icons/fa'
 const experiences = [
   {
     title: 'Innovation and Entrepreneurship Development Center (IEDC)',
-    duration: '2023 - Present',
+    duration: 'Nov 2024 - Present',
     location: 'Bangalore, India',
     description: 'Leading technical initiatives and managing club activities',
     achievements: [
