@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3DDC84;
+  --secondary: #7F52FF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#0a0a0a] text-zinc-50;
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at center,
+    var(--primary) 0%,
+    var(--secondary) 25%,
+    transparent 50%
+  );
+  filter: blur(100px);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.custom-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(
+      45deg,
+      var(--primary),
+      var(--secondary)
+    );
+  }
+  
+  .text-gradient {
+    background: linear-gradient(
+      45deg,
+      var(--primary),
+      var(--secondary)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .custom-border {
+    @apply border border-zinc-50/10;
+  }
+
+  .glass-effect {
+    @apply bg-zinc-50/5 backdrop-blur-lg;
+  }
+}
+
+@layer utilities {
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
